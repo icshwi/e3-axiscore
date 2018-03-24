@@ -6,7 +6,7 @@ sed -i '/submodule/,29220d'  $(TOP)/.git/config
 rm -rf $(TOP)/.git/modules/$@
 git submodule init $@/
 git submodule update --init --recursive $@/.
-git submodule update --remote --merge $@/
+#git submodule update --remote --merge $@/
 endef
 
 ifndef VERBOSE
