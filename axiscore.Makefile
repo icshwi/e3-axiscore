@@ -27,7 +27,7 @@
 
 where_am_I := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
-include $(REQUIRE_TOOLS)/driver.makefile
+include $(E3_REQUIRE_TOOLS)/driver.makefile
 
 APP:=./
 APPDB:=$(APP)/Db
@@ -74,3 +74,7 @@ $(DBDINC_DEPS): $(DBDINC_HDRS)
 .dbd.h:
 	$(DBTORECORDTYPEH)  $(USR_DBDFLAGS) -o $@ $<
 
+
+# db rule is the default in RULES_E3, so add the empty one
+
+db:
